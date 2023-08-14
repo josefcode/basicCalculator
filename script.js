@@ -40,13 +40,14 @@ class Calculator {
         this.prevOperand = this.currentOperand;
         this.currentOperand = '';
     }
-
+    
     operate() {
         let computation;
         const prev = parseFloat(this.prevOperand);
         const current = parseFloat(this.currentOperand);
-        if(isNaN(prev) || isNaN(current)) return;
-        switch(this.operation) {
+        if (isNaN(prev) || isNaN(current)) return;
+    
+        switch (this.operation) {
             case '+':
                 computation = prev + current;
                 break;
@@ -62,7 +63,13 @@ class Calculator {
             default:
                 return;
         }
-        this.currentOperand = computation.toFixed(2)
+    
+        if (Math.abs(computation) >= 1e9) { // Adjust the threshold as needed
+            this.currentOperand = computation.toFixed(2);
+        } else {
+            this.currentOperand = computation.toString();
+        }
+        
         this.operation = undefined;
         this.prevOperand = '';
     }

@@ -1,38 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calculator</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="./script.js" defer></script>
 </head>
 <body>
-    <header>
-    <h1>Calculator</h1>
-    </header>
-    <main>
-    <section class="calculator">
-        <p class="display">0</p>
-        <button class="clear">C</button>
-        <button class="digit">7</button>
-        <button class="digit">8</button>
-        <button class="digit">9</button>
-        <button class="operator">/</button>
-        <button class="digit">4</button>
-        <button class="digit">5</button>
-        <button class="digit">6</button>
-        <button class="operator">*</button>
-        <button class="digit">1</button>
-        <button class="digit">2</button>
-        <button class="digit">3</button>
-        <button class="operator">-</button>
-        <button class="decimal">.</button>
-        <button class="digit">0</button>
-        <button class="equals">=</button>
-        <button class="operator">+</button>
-        <button class="backspace">←</button>
-      </section>
+    <main class="calculator-grid">
+        <div class="output">
+            <span data-prev-operand class="prevOutput">0</span>
+            <span data-current-operand class="currentOutput">0</span>
+        </div>
+            <button class="spantwo" data-all-clear data-key="Escape">AC</button>
+            <button data-delete data-key="Backspace">DEL</button>
+            <button data-operation data-key="÷">÷</button>
+            <button data-number data-key="1" >1</button>
+            <button data-number data-key="2">2</button>
+            <button data-number data-key="3">3</button>
+            <button data-operation data-key="*">*</button>
+            <button data-number data-key="4">4</button>
+            <button data-number data-key="5">5</button>
+            <button data-number data-key="6">6</button>
+            <button data-operation data-key="+">+</button>
+            <button data-number data-key="7">7</button>
+            <button data-number data-key="8">8</button>
+            <button data-number data-key="9">9</button>
+            <button data-operation data-key="-">-</button>
+            <button data-number data-key=".">.</button>
+            <button data-number data-key="0">0</button>
+            <button class="spantwo" data-equals data-key="=">=</button>
     </main>
-  <script src="script.js"></script>
 </body>
 </html>

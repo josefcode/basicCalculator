@@ -31,14 +31,14 @@ class Calculator {
     chooseOperation(operation) {
         if (this.currentOperand === '') return;
         if (this.prevOperand !== '') {
-            this.compute();
+            this.operate();
         }
         this.operation  = operation;
         this.prevOperand = this.currentOperand;
         this.currentOperand = '';
     }
 
-    compute() {
+    operate() {
         let computation;
         const prev = parseFloat(this.prevOperand);
         const current = parseFloat(this.currentOperand);
@@ -59,7 +59,7 @@ class Calculator {
             default:
                 return;
         }
-        this.currentOperand = computation;
+        this.currentOperand = Math.round(computation);
         this.operation = undefined;
         this.prevOperand = '';
     }
@@ -111,7 +111,7 @@ operationsBtn.forEach(button => {
 });
 //show the calculation result
 equalsBtn.addEventListener('click', () => {
-    calculator.compute();
+    calculator.operate();
     calculator.updateDisplay();
 });
 //reset calculation

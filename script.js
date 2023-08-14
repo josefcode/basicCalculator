@@ -20,14 +20,17 @@ class Calculator {
     }
 
     delete() {
-        this.currentOperand = this.currentOperand.toString() === '0' ? '0' : this.currentOperand.toString().slice(0, -1);
+        this.currentOperand = this.currentOperand.toString().length > 1 ? this.currentOperand.toString().slice(0, -1) : '0';
     }
-
+    
     appendNumber(number) {
-        if (number === '.' && this.currentOperand.includes('.')) return;
-        this.currentOperand = this.currentOperand.toString() +  number.toString();
+        if (number === '.' && !this.currentOperand.includes('.')) {
+            this.currentOperand += '0.';
+        } else if (number !== '.') {
+            this.currentOperand = this.currentOperand === '0' ? number.toString() : this.currentOperand + number;
+        }
     }
-
+    
     chooseOperation(operation) {
         if (this.currentOperand === '') return;
         if (this.prevOperand !== '') {

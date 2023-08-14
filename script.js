@@ -59,7 +59,7 @@ class Calculator {
             default:
                 return;
         }
-        this.currentOperand = Math.round(computation);
+        this.currentOperand = computation.toFixed(2)
         this.operation = undefined;
         this.prevOperand = '';
     }

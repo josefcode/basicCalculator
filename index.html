@@ -4,34 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
     <title>Calculator</title>
     <link rel="stylesheet" href="styles.css">
     <script src="./script.js" defer></script>
 </head>
 <body>
-        <div class="calculator-grid">
-            <div class="output">
-                <div data-prev-operand class="prevOutput"></div>
-                <div data-current-operand class="currentOutput"></div>
-            </div>    
-                <button class="spantwo" data-all-clear>AC</button>
-                <button data-delete>DEL</button>
-                <button data-operation>÷</button>
-                <button data-number>1</button>
-                <button data-number>2</button>
-                <button data-number>3</button>
-                <button data-operation>*</button>
-                <button data-number>4</button>
-                <button data-number>5</button>
-                <button data-number>6</button>
-                <button data-operation>+</button>
-                <button data-number>7</button>
-                <button data-number>8</button>
-                <button data-number>9</button>
-                <button data-operation>-</button>
-                <button data-number>.</button>
-                <button data-number>0</button>
-                <button class="spantwo" data-equals>=</button>
+    <main class="calculator-grid">
+        <div class="output">
+            <span data-prev-operand class="prevOutput">0</span>
+            <span data-current-operand class="currentOutput">0</span>
         </div>
+            <button class="spantwo" data-all-clear data-key="Escape">C</button>
+            <button data-delete data-key="Backspace">←</button>
+            <button data-operation data-key="÷">÷</button>
+            <button data-number data-key="1" >1</button>
+            <button data-number data-key="2">2</button>
+            <button data-number data-key="3">3</button>
+            <button data-operation data-key="*">*</button>
+            <button data-number data-key="4">4</button>
+            <button data-number data-key="5">5</button>
+            <button data-number data-key="6">6</button>
+            <button data-operation data-key="+">+</button>
+            <button data-number data-key="7">7</button>
+            <button data-number data-key="8">8</button>
+            <button data-number data-key="9">9</button>
+            <button data-operation data-key="-">-</button>
+            <button data-number data-key=".">.</button>
+            <button data-number data-key="0">0</button>
+            <button class="spantwo" data-equals data-key="=">=</button>
+    </main>
 </body>
 </html>

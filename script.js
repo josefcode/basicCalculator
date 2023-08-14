@@ -24,9 +24,15 @@ class Calculator {
     }
     
     appendNumber(number) {
-        if (number === '.' && !this.currentOperand.includes('.')) {
-            this.currentOperand += '0.';
-        } else if (number !== '.') {
+        if (this.currentOperand.length >= 9) {
+            this.currentOperand = this.floated(this.currentOperand);
+        }
+    
+        if (number === '.') {
+            if (!this.currentOperand.includes('.')) {
+                this.currentOperand += '.';
+            }
+        } else {
             this.currentOperand = this.currentOperand === '0' ? number.toString() : this.currentOperand + number;
         }
     }

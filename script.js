@@ -103,7 +103,7 @@ class Calculator {
         //round value with long decimals so that they don’t overflow the screen.
         this.currentOperandTextElement.innerText = this.currentOperand.length > 9 ? this.getDisplayNumber(this.currentOperand).substring(0, 9) : this.getDisplayNumber(this.currentOperand);
         if (this.operation != null) {
-            this.prevOperandTextElement.innerText = `${this.getDisplayNumber(this.prevOperand)} ${this.operation}`;
+            this.prevOperandTextElement.innerText = `${this.getDisplayNumber(this.prevOperand).substring(0, 9)} ${this.operation}`;
         } else {
             this.prevOperandTextElement.innerText = '0';
         }    

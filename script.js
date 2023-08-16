@@ -24,10 +24,6 @@ class Calculator {
     }
     
     appendNumber(number) {
-        if (this.currentOperand.length >= 9) {
-            this.currentOperand = this.floated(this.currentOperand);
-        }
-    
         if (number === '.') {
             if (!this.currentOperand.includes('.')) {
                 this.currentOperand += '.';
@@ -36,16 +32,23 @@ class Calculator {
             this.currentOperand = this.currentOperand === '0' ? number.toString() : this.currentOperand + number;
         }
     }
-    
+
     chooseOperation(operation) {
-        if (this.currentOperand === '') return;
-        if (this.prevOperand !== '') {
+        if (this.currentOperand === '0') return;
+            
+        if (this.prevOperand !== '0' && this.operation) {
+            this.operation = operation;
+            this.updateDisplay();
+            return;
+        }
+            
+        if (this.prevOperand !== '0') {
             this.operate();
         }
-        this.operation  = operation;
-        this.prevOperand = this.currentOperand;
-        this.currentOperand = '';
-    }
+            this.operation = operation;
+            this.prevOperand = this.currentOperand;
+            this.currentOperand = '';
+        }
     
     operate() {
         let computation;
